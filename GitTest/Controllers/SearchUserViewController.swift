@@ -17,7 +17,6 @@ class SearchUserViewController: UIViewController {
     }
 
     //MARK: - Outlets
-    
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var favoritesOutlet: UIBarButtonItem!
     @IBOutlet private weak var textField: UITextField!

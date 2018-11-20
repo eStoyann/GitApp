@@ -19,17 +19,14 @@ final class CoreDataManager {
 
     private init() {}
 
-    func create(objects: [Any], context: NSManagedObjectContext, callback: @escaping () -> Void) {
+    func create(objects: Repo, context: NSManagedObjectContext, callback: @escaping () -> Void) {
         context.perform { [weak self] in
-            guard let _self = self else { return }
             for object in objects {
-                if let repo = object as? RepoElement {
-                    _ = RepoCoreDataModel.findOrCreate(repo: repo, context: context)
-                }
+                _ = RepoCoreDataModel.findOrCreate(repo: object, context: context)
             }
             try? context.save()
             try? context.parent?.save()
-            _self.statistics(context)
+            self?.statistics(context)
             callback()
         }
     }
@@ -43,39 +40,33 @@ final class CoreDataManager {
             }
         }
     }
-    func update(objects: [Any], context: NSManagedObjectContext, callback: @escaping () -> Void) {
+    func update(objects: Repo, context: NSManagedObjectContext, callback: @escaping () -> Void) {
         context.perform { [weak self] in
-            guard let _self = self else { return }
             for object in objects {
-                if let repo = object as? RepoElement {
-                    _ = RepoCoreDataModel.update(repo: repo, context: context)
-                }
+                _ = RepoCoreDataModel.update(repo: object, context: context)
             }
             try? context.save()
             try? context.parent?.save()
-            _self.statistics(context)
+            self?.statistics(context)
             callback()
         }
     }
-    func delete(objects: [Any], context: NSManagedObjectContext, callback: @escaping () -> Void) {
+    func delete(objects: Repo, context: NSManagedObjectContext, callback: @escaping () -> Void) {
         context.perform { [weak self] in
-            guard let _self = self else { return }
             for object in objects {
-                if let repo = object as? RepoElement {
-                    _ = RepoCoreDataModel.remove(repo: repo, context: context)
-                }
+                _ = RepoCoreDataModel.remove(repo: object, context: context)
             }
             try? context.save()
             try? context.parent?.save()
-            _self.statistics(context)
+            self?.statistics(context)
             callback()
         }
     }
-    func find(objects: [Any], context: NSManagedObjectContext, callback: @escaping([RepoCoreDataModel]) -> Void) {
+    func find(objects: Repo, context: NSManagedObjectContext, callback: @escaping([RepoCoreDataModel]) -> Void) {
         context.perform {
-            var repos = [RepoCoreDataModel]()
+            var repos: [RepoCoreDataModel] = []
             for object in objects {
-                if let element = object as? RepoElement, let repo = RepoCoreDataModel.find(repo: element, context: context) {
+                if let repo = RepoCoreDataModel.find(repo: object, context: context) {
                     repos.append(repo)
                 }
             }
