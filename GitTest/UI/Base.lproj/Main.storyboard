@@ -14,42 +14,71 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchUserViewController" customModule="GitTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="VKL-8J-09x">
-                                <rect key="frame" x="16" y="314.5" width="343" height="102"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTk-gu-dAL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5XK-GK-f1r">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="nickname"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Rm4-0k-Www"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pts-5b-inE">
-                                        <rect key="frame" x="0.0" y="70" width="343" height="32"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Search">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aeI-gb-yOM"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3a-vo-qva">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="J7i-e0-SlP">
+                                                <rect key="frame" x="16" y="250.5" width="343" height="102"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hhc-4q-HRY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="nickname"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="FcL-6g-mLN"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taZ-uL-2Yn">
+                                                        <rect key="frame" x="0.0" y="70" width="343" height="32"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Search">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="searchUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVv-ju-PQ7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="J7i-e0-SlP" firstAttribute="leading" secondItem="D3a-vo-qva" secondAttribute="leading" constant="16" id="5ui-hN-jqp"/>
+                                            <constraint firstItem="J7i-e0-SlP" firstAttribute="centerX" secondItem="D3a-vo-qva" secondAttribute="centerX" id="RpR-Hb-70O"/>
+                                            <constraint firstAttribute="trailing" secondItem="J7i-e0-SlP" secondAttribute="trailing" constant="16" id="ehS-UX-eJH"/>
+                                            <constraint firstItem="J7i-e0-SlP" firstAttribute="centerY" secondItem="D3a-vo-qva" secondAttribute="centerY" id="gL4-Cv-0bf"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="D3a-vo-qva" firstAttribute="centerY" secondItem="oTk-gu-dAL" secondAttribute="centerY" id="5Sq-UM-IET"/>
+                                    <constraint firstItem="D3a-vo-qva" firstAttribute="height" secondItem="oTk-gu-dAL" secondAttribute="height" priority="250" id="7hU-Mu-SgH"/>
+                                    <constraint firstItem="D3a-vo-qva" firstAttribute="width" secondItem="oTk-gu-dAL" secondAttribute="width" id="Jce-oZ-E0c"/>
+                                    <constraint firstItem="D3a-vo-qva" firstAttribute="centerX" secondItem="oTk-gu-dAL" secondAttribute="centerX" id="QvI-WA-KdE"/>
+                                    <constraint firstItem="D3a-vo-qva" firstAttribute="leading" secondItem="oTk-gu-dAL" secondAttribute="leading" id="TKs-On-K6y"/>
+                                    <constraint firstAttribute="bottom" secondItem="D3a-vo-qva" secondAttribute="bottom" id="cg7-Sq-4eG"/>
+                                    <constraint firstAttribute="trailing" secondItem="D3a-vo-qva" secondAttribute="trailing" id="hzR-bd-YLm"/>
+                                    <constraint firstItem="D3a-vo-qva" firstAttribute="top" secondItem="oTk-gu-dAL" secondAttribute="top" id="xMM-7Z-sQF"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="VKL-8J-09x" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LFd-BJ-Zd1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="VKL-8J-09x" secondAttribute="trailing" constant="16" id="LaX-V8-2za"/>
-                            <constraint firstItem="VKL-8J-09x" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rlE-He-dbQ"/>
-                            <constraint firstItem="VKL-8J-09x" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yEC-yH-x3H"/>
+                            <constraint firstItem="oTk-gu-dAL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E2W-FJ-22E"/>
+                            <constraint firstItem="oTk-gu-dAL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jte-5E-OUp"/>
+                            <constraint firstItem="oTk-gu-dAL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pei-sZ-2Pr"/>
+                            <constraint firstItem="oTk-gu-dAL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sHN-xf-qgN"/>
+                            <constraint firstItem="oTk-gu-dAL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uDG-EC-VJ0"/>
+                            <constraint firstItem="oTk-gu-dAL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xK2-D1-bZS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -66,8 +95,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="favoritesOutlet" destination="HrL-bv-qmX" id="PdN-4u-8fI"/>
-                        <outlet property="searchBtn" destination="Pts-5b-inE" id="lp4-pA-cMM"/>
-                        <outlet property="textField" destination="5XK-GK-f1r" id="SDd-dx-yVW"/>
+                        <outlet property="scrollView" destination="oTk-gu-dAL" id="ZtP-SP-anB"/>
+                        <outlet property="searchBtn" destination="taZ-uL-2Yn" id="3gN-xI-ozN"/>
+                        <outlet property="textField" destination="Hhc-4q-HRY" id="k16-cL-QS9"/>
                         <segue destination="Ef2-7f-XeW" kind="show" identifier="Show Repos List" id="MPU-Al-gQy"/>
                         <segue destination="7b0-PD-ArL" kind="presentation" identifier="Show Favorites Repos" id="zDR-oa-hOI"/>
                     </connections>

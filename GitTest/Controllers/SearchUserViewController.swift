@@ -17,7 +17,8 @@ class SearchUserViewController: UIViewController {
     }
 
     //MARK: - Outlets
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet private weak var favoritesOutlet: UIBarButtonItem!
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var searchBtn: UIButton! {
@@ -104,10 +105,10 @@ class SearchUserViewController: UIViewController {
     @objc private func keyboardEvents(_ notification: Notification) {
         guard let keyboard = ((notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) else { return }
         if notification.name == UIResponder.keyboardWillShowNotification {
-            (view as! UIScrollView).contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + keyboard.height)
-            (view as! UIScrollView).scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboard.height, right: 0)
+            scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + keyboard.height / 2)
+            scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboard.height, right: 0)
         } else if notification.name == UIResponder.keyboardWillHideNotification {
-            (view as! UIScrollView).contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
+            scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
         }
     }
 
