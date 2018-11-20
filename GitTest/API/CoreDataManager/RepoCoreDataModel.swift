@@ -13,12 +13,12 @@ class RepoCoreDataModel: NSManagedObject {
 
     class func findOrCreate(repo: RepoElement, context: NSManagedObjectContext) -> RepoCoreDataModel? {
 
-        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: "RepoCoreDataModel")
+        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: typeName)
         request.predicate = NSPredicate(format: "uid = %@", NSNumber(value: repo.id))
 
         if let resultRepo = (try? context.fetch(request))?.first {
             return resultRepo
-        } else if let newRepo = NSEntityDescription.insertNewObject(forEntityName: "RepoCoreDataModel", into: context) as? RepoCoreDataModel {
+        } else if let newRepo = NSEntityDescription.insertNewObject(forEntityName: typeName, into: context) as? RepoCoreDataModel {
             newRepo.uid = NSNumber(value: repo.id)
             newRepo.name = repo.name
             newRepo.url = repo.url != nil ? repo.url!.absoluteString : nil
@@ -39,7 +39,7 @@ class RepoCoreDataModel: NSManagedObject {
 
     class func remove(repo: RepoElement, context: NSManagedObjectContext) -> RepoCoreDataModel? {
 
-        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: "RepoCoreDataModel")
+        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: typeName)
         request.predicate = NSPredicate(format: "uid = %@", NSNumber(value: repo.id))
 
         if let resultRepo = (try? context.fetch(request))?.first {
@@ -51,7 +51,7 @@ class RepoCoreDataModel: NSManagedObject {
 
     class func update(repo: RepoElement, context: NSManagedObjectContext) -> RepoCoreDataModel? {
 
-        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: "RepoCoreDataModel")
+        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: typeName)
         request.predicate = NSPredicate(format: "uid = %@", NSNumber(value: repo.id))
 
         if let resultRepo = (try? context.fetch(request))?.first {
@@ -76,7 +76,7 @@ class RepoCoreDataModel: NSManagedObject {
     
     class func find(repo: RepoElement, context: NSManagedObjectContext) -> RepoCoreDataModel? {
 
-        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: "RepoCoreDataModel")
+        let request: NSFetchRequest<RepoCoreDataModel> = NSFetchRequest(entityName: typeName)
         request.predicate = NSPredicate(format: "uid = %@", NSNumber(value: repo.id))
 
         if let resultRepos = (try? context.fetch(request))?.first {

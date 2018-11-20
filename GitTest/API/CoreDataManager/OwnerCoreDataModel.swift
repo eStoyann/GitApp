@@ -13,12 +13,12 @@ class OwnerCoreDataModel: NSManagedObject {
 
     class func findOrCreate(owner: Owner, context: NSManagedObjectContext) -> OwnerCoreDataModel? {
 
-        let request: NSFetchRequest<OwnerCoreDataModel> = NSFetchRequest(entityName: "OwnerCoreDataModel")
+        let request: NSFetchRequest<OwnerCoreDataModel> = NSFetchRequest(entityName: typeName)
         request.predicate = NSPredicate(format: "uid = %@", NSNumber(value: owner.id))
 
         if let resultOwner = (try? context.fetch(request))?.first {
             return resultOwner
-        } else if let newOwner = NSEntityDescription.insertNewObject(forEntityName: "OwnerCoreDataModel", into: context) as? OwnerCoreDataModel {
+        } else if let newOwner = NSEntityDescription.insertNewObject(forEntityName: typeName, into: context) as? OwnerCoreDataModel {
             newOwner.uid = NSNumber(value: owner.id)
             newOwner.name = owner.login
             return newOwner
@@ -28,7 +28,7 @@ class OwnerCoreDataModel: NSManagedObject {
 
     class func update(owner: Owner, context: NSManagedObjectContext) -> OwnerCoreDataModel? {
 
-        let request: NSFetchRequest<OwnerCoreDataModel> = NSFetchRequest(entityName: "OwnerCoreDataModel")
+        let request: NSFetchRequest<OwnerCoreDataModel> = NSFetchRequest(entityName: typeName)
         request.predicate = NSPredicate(format: "uid = %@", NSNumber(value: owner.id))
 
         if let resultOwner = (try? context.fetch(request))?.first {

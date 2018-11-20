@@ -46,6 +46,7 @@
 		5E5418E021A3FB9500B21DC8 /* NetworkingManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5418DF21A3FB9500B21DC8 /* NetworkingManagerProtocol.swift */; };
 		5E5418E221A3FBCC00B21DC8 /* NetworkingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5418E121A3FBCC00B21DC8 /* NetworkingResult.swift */; };
 		5E5418E421A3FC4200B21DC8 /* ExtensionNetworkingManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5418E321A3FC4200B21DC8 /* ExtensionNetworkingManagerProtocol.swift */; };
+		5E5418E621A40ECF00B21DC8 /* ExtensionNSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5418E521A40ECF00B21DC8 /* ExtensionNSObject.swift */; };
 		5ED73A7D2189A688004B553B /* ExtensionNSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED73A7C2189A688004B553B /* ExtensionNSString.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		5E5418DF21A3FB9500B21DC8 /* NetworkingManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerProtocol.swift; sourceTree = "<group>"; };
 		5E5418E121A3FBCC00B21DC8 /* NetworkingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingResult.swift; sourceTree = "<group>"; };
 		5E5418E321A3FC4200B21DC8 /* ExtensionNetworkingManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNetworkingManagerProtocol.swift; sourceTree = "<group>"; };
+		5E5418E521A40ECF00B21DC8 /* ExtensionNSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSObject.swift; sourceTree = "<group>"; };
 		5ED73A7C2189A688004B553B /* ExtensionNSString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 				5E4F6C2A2188DCBC00F33E5C /* ExtensionRepoElement.swift */,
 				5E4F6C2C2188DD5800F33E5C /* ExstensionOwner.swift */,
 				5E5418E321A3FC4200B21DC8 /* ExtensionNetworkingManagerProtocol.swift */,
+				5E5418E521A40ECF00B21DC8 /* ExtensionNSObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				5E44E57B218B68CC00FDB347 /* ErrorManager.swift in Sources */,
 				5E4F6BD52188481100F33E5C /* GitTest.xcdatamodeld in Sources */,
 				5E4F6BE821884AD600F33E5C /* DetailRepoViewController.swift in Sources */,
+				5E5418E621A40ECF00B21DC8 /* ExtensionNSObject.swift in Sources */,
 				5E5418E221A3FBCC00B21DC8 /* NetworkingResult.swift in Sources */,
 				5E4F6C112188BF9A00F33E5C /* CoreDataManager.swift in Sources */,
 				5E4F6BE421884A5400F33E5C /* ReposListTableViewController.swift in Sources */,
