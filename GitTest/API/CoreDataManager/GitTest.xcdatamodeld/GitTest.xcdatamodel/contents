@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OwnerCoreDataModel" representedClassName=".OwnerCoreDataModel" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Transformable" customClassName=".NSNumber" syncable="YES"/>
+        <relationship name="repos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RepoCoreDataModel" inverseName="owner" inverseEntity="RepoCoreDataModel" syncable="YES"/>
+    </entity>
+    <entity name="RepoCoreDataModel" representedClassName=".RepoCoreDataModel" syncable="YES" codeGenerationType="category">
+        <attribute name="createdRepo" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="descriptions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="forks" optional="YES" attributeType="Transformable" customClassName=".NSNumber" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pushedRepo" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Transformable" customClassName=".NSNumber" syncable="YES"/>
+        <attribute name="stars" optional="YES" attributeType="Transformable" customClassName=".NSNumber" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Transformable" customClassName=".NSNumber" syncable="YES"/>
+        <attribute name="updatedRepo" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watchers" optional="YES" attributeType="Transformable" customClassName=".NSNumber" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OwnerCoreDataModel" inverseName="repos" inverseEntity="OwnerCoreDataModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="OwnerCoreDataModel" positionX="120.734375" positionY="37.59375" width="128" height="88"/>
+        <element name="RepoCoreDataModel" positionX="-96.2890625" positionY="62.58984375" width="128" height="240"/>
+    </elements>
+</model>
